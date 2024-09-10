@@ -1,13 +1,10 @@
 let data = [];
-let baseUrl = 'https://github.com/HusseinElAshry/countries/blob/main/';
 const fetchData = async(e)=>{
-    const response = await fetch(`${baseUrl}data.json`,{
-        mode:'no-cors',
-        headers:{
-            'Access-Control-Allow-Origin':'https://husseinelashry.github.io/*'
-        }
+    const response = await fetch(`../data.json`,{
+        mode:'no-cors'
     });
     data = await response.json();
+    
 }
 
 export {
