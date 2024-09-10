@@ -1,7 +1,7 @@
 import { data,fetchData } from "./dataModule.js";
 import changeMode from "./darkMode.js";
 import { handleLoad } from "./loader.js";
-import { addCardInfo,createElement } from "./utilies.js";
+import { addCardInfo, createElement, repoURL } from "./utilies.js";
 const displayCardsMapHandler = (el)=>{
     const population = addCardInfo('Population',el.population);
     const region = addCardInfo('Region',el.region);
@@ -53,7 +53,7 @@ const filterByKey = (key)=>{
     display(data.filter(el=>el.name.toLowerCase().includes(key.toLowerCase())));
 }
 const navigateToInfo = (country)=>{
-    window.open(`country.html?country=${country}`,'_self');
+    window.open(`${repoURL}country.html?country=${country}`,'_self');
 }
 const fireRegionFilter = ()=>{
     const regionListElement = document.getElementById('regionSelect');

@@ -1,7 +1,7 @@
 import {data,fetchData} from './dataModule.js';
 import changeMode from "./darkMode.js";
 import { handleLoad } from './loader.js';
-import { addCardInfo,createElement } from './utilies.js';
+import { addCardInfo,createElement, repoURL } from './utilies.js';
 let countryInfo = {};
 const spanMapHandler = (el)=>{
     return createElement({
@@ -83,7 +83,7 @@ const getInfoAndDisplay = ()=> {
 }
 const handleNavigate= ()=>{
     document.getElementById('backBtn').addEventListener('click',()=>{
-        window.open('index.html','_self');
+        window.open(`${repoURL}index.html`,'_self');
     });
 }
 handleLoad('loader');
