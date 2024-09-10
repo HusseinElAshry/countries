@@ -1,0 +1,27 @@
+:root{
+    --very-dark-blue: #111517;
+    --dark-gray: #858585;
+    --very-light-gray: #fafafa;
+    --white: #ffffff;
+}
+body{
+    background-color: var(--very-light-gray);
+    color: var(--very-dark-blue);
+}
+nav{
+    background-color:var(--white);
+    box-shadow: 1px 1px 5px 0.25px var(--dark-gray);
+}
+.item{
+    background-color: var(--white);
+}
+.badge-span{
+    background-color: var(--white)!important;
+    box-shadow: 0px 0px 5px 0.5px var(--dark-gray)!important;
+}
+input::placeholder{
+    color:var(--very-dark-blue)
+}
+select{
+    color: var(--very-dark-blue);
+}

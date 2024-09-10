@@ -1,0 +1,24 @@
+.item img{
+    height: 200px;
+}
+
+input{
+    all: unset;
+    height: 2rem;
+    font-size: 1.5rem;
+}
+input::placeholder{
+    font-size: 1rem;
+    transform: translateY(-15%);
+}
+select{
+    outline: 0;
+}
+option{
+    background-color:transparent;
+    font-size: 1.25rem;
+    padding: 4px 8px;
+    appearance: unset;
+}
+
+
