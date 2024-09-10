@@ -52,7 +52,7 @@ const filterByKey = (key)=>{
     display(data.filter(el=>el.name.toLowerCase().includes(key.toLowerCase())));
 }
 const navigateToInfo = (country)=>{
-    window.open(`country.html?country=${country}`,'_self');
+    window.open(`../country.html?country=${country}`,'_self');
 }
 const fireRegionFilter = ()=>{
     const regionListElement = document.getElementById('regionSelect');

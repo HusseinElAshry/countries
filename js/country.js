@@ -82,7 +82,7 @@ const getInfoAndDisplay = ()=> {
 }
 const handleNavigate= ()=>{
     document.getElementById('backBtn').addEventListener('click',()=>{
-        window.open('index.html','_self');
+        window.open('../index.html','_self');
     });
 }
 handleLoad('loader');
