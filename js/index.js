@@ -21,6 +21,7 @@ const displayCardsMapHandler = (el)=>{
         classList:['w-100'],
     });
     img.setAttribute('src', el?.flags?.svg);
+    img.setAttribute('alt',`${el.name} flag`);
     const item = createElement({
         tagName:'div',
         classList:['item','h-100'],

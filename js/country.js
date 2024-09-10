@@ -65,6 +65,7 @@ const displayInfo = (objToDisplay)=>{
         classList:['w-100']
     });
     img.setAttribute('src',objToDisplay.flags.png);
+    img.setAttribute('alt',`${objToDisplay.name} flag`);
     const imgItemDivision = createElement({
         tagName:'div',
         classList:['item-img', 'col-xl-4',  'col-lg-5', 'mb-3'],
