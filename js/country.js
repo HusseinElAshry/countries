@@ -1,5 +1,5 @@
 import {data,fetchData} from './dataModule.js';
-import changeMode from "./darkMode.js";
+import changeMode, { getCurrentMode, setMode } from "./darkMode.js";
 import { handleLoad } from './loader.js';
 import { addCardInfo,createElement, repoURL } from './utilies.js';
 let countryInfo = {};
@@ -75,7 +75,8 @@ const displayInfo = (objToDisplay)=>{
 
 }
 const getInfoAndDisplay = ()=> {
-    const country = window.location.search?window.location.search.substring('9'):"EGY";
+    const countryParam = new URLSearchParams(window.location.search).get('country');
+    const country = countryParam?countryParam:"EGY";    
     fetchData().then(()=>{
         countryInfo = {...data.filter(el=>el.alpha3Code===country)[0]}
         displayInfo(countryInfo);
@@ -83,9 +84,11 @@ const getInfoAndDisplay = ()=> {
 }
 const handleNavigate= ()=>{
     document.getElementById('backBtn').addEventListener('click',()=>{
-        window.open(`${repoURL}index.html`,'_self');
+        const mode = getCurrentMode();
+        window.open(`${repoURL}index.html?mode=${mode}`,'_self');
     });
 }
+setMode()
 handleLoad('loader');
 handleNavigate();
 changeMode();

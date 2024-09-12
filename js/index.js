@@ -1,5 +1,5 @@
 import { data,fetchData } from "./dataModule.js";
-import changeMode from "./darkMode.js";
+import changeMode, { getCurrentMode, setMode } from "./darkMode.js";
 import { handleLoad } from "./loader.js";
 import { addCardInfo, createElement, repoURL } from "./utilies.js";
 const displayCardsMapHandler = (el)=>{
@@ -53,7 +53,8 @@ const filterByKey = (key)=>{
     display(data.filter(el=>el.name.toLowerCase().includes(key.toLowerCase())));
 }
 const navigateToInfo = (country)=>{
-    window.open(`${repoURL}country.html?country=${country}`,'_self');
+    const mode = getCurrentMode();
+    window.open(`${repoURL}country.html?country=${country}&mode=${mode}`,'_self');
 }
 const fireRegionFilter = ()=>{
     const regionListElement = document.getElementById('regionSelect');
@@ -76,6 +77,7 @@ const fireKeyFilter = ()=>{
     });
 }
 document.forms[0].addEventListener('submit',(e)=>{e.preventDefault()});
+setMode();
 fireKeyFilter();
 fireRegionFilter();
 handleLoad('loader');
