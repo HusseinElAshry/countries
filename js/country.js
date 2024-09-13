@@ -1,5 +1,5 @@
 import {data,fetchData} from './dataModule.js';
-import changeMode, { getCurrentMode, setMode } from "./darkMode.js";
+import changeMode, { setMode } from "./darkMode.js";
 import { handleLoad } from './loader.js';
 import { addCardInfo,createElement, repoURL } from './utilies.js';
 let countryInfo = {};
@@ -84,8 +84,7 @@ const getInfoAndDisplay = ()=> {
 }
 const handleNavigate= ()=>{
     document.getElementById('backBtn').addEventListener('click',()=>{
-        const mode = getCurrentMode();
-        window.open(`${repoURL}index.html?mode=${mode}`,'_self');
+        window.open(`${repoURL}index.html`,'_self');
     });
 }
 setMode()
